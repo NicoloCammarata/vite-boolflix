@@ -15,6 +15,9 @@ export default {
 </script>
 
 <template>
+    <header>
+        <h1>Netflix</h1>
+    </header>
     
   
 </template>

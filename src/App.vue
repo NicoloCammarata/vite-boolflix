@@ -5,7 +5,7 @@ import appMain from './components/appMain.vue';
 import appFooter from './components/appFooter.vue';
 import axios from 'axios';
 import { store } from './sotre.js'
-
+import "@fortawesome/fontawesome-free/css/all.css";
 
 
 export default {
@@ -58,7 +58,9 @@ export default {
             
             
             
-        }
+        },
+        
+
 
 
     },

@@ -56,6 +56,12 @@ export default {
             
              
         },
+        valueFilm(voto){
+            if(voto > 0.5){
+                classlist.add('buono')
+            }
+            
+        }
         
     },
     components: {
@@ -74,6 +80,10 @@ export default {
             
             
             <ul v-for="(film, i) in store.films">
+                <li>
+                    <img :src="'https://image.tmdb.org/t/p/w342' + film.poster_path" alt="film.title">
+                    
+                </li>
                 <li >
                     {{ film.title }}
                 </li>
@@ -84,11 +94,16 @@ export default {
                     {{ film.original_language }}
                     
                 </li>
-                <li >
+                <li class="flag">
                     <img  :src="lenguage(film.original_language)">
                 </li>
                 <li >
                     {{ film.vote_average }}
+                    <i :class="{ 'buono': film.vote_average > 1.500 }" class="fa-regular fa-star" ></i>
+                    <i :class="{ 'buono': film.vote_average > 3.500 }" class="fa-regular fa-star"></i>
+                    <i :class="{ 'buono': film.vote_average > 5.500 }" class="fa-regular fa-star"></i>
+                    <i :class="{ 'buono': film.vote_average > 7.500 }" class="fa-regular fa-star"></i>
+                    <i :class="{ 'buono': film.vote_average > 9.500 }" class="fa-regular fa-star"></i>
                 </li>
 
                <hr>
@@ -99,6 +114,10 @@ export default {
         <div>
             <h2>Serie</h2>
             <ul v-for="(serie, i) in store.series">
+                <li>
+                    <img :src="'https://image.tmdb.org/t/p/w342' + serie.poster_path" alt="serie.title">
+                    
+                </li>
                 <li >
                     {{ serie.name }}
                 </li>
@@ -109,11 +128,16 @@ export default {
                     {{ serie.original_language }}
                     
                 </li>
-                <li >
+                <li class="flag">
                     <img  :src="lenguage(serie.original_language)">
                 </li>
                 <li >
                     {{ serie.vote_average }}
+                    <i :class="{ 'buono': serie.vote_average > 1.500 }" class="fa-regular fa-star" ></i>
+                    <i :class="{ 'buono': serie.vote_average > 3.500 }" class="fa-regular fa-star"></i>
+                    <i :class="{ 'buono': serie.vote_average > 5.500 }" class="fa-regular fa-star"></i>
+                    <i :class="{ 'buono': serie.vote_average > 7.500 }" class="fa-regular fa-star"></i>
+                    <i :class="{ 'buono': serie.vote_average > 9.500 }" class="fa-regular fa-star"></i>
                 </li>
 
                <hr>
@@ -127,8 +151,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-img{
-    height: 50px;
+.flag{
+    >img{
+        height: 50px;
+    }
+}
+
+.buono{
+    background-color: yellow;
 }
 
 </style>

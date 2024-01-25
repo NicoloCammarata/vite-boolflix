@@ -30,6 +30,17 @@ export default {
                     .finally(() => {
                         console.log('Questo console.log viene eseguito sempre alla fine della chiamata API');
                     });
+                axios
+                    .get('https://api.themoviedb.org/3/search/tv?api_key=131abdcb5fd33f160abcf1426cd3a650&language=it_IT&query=' + queryString )
+                    .then((response) => {
+                        console.log(response.data.results);
+                        this.store.series = response.data.results
+                        console.log('serie', this.store.series)
+                    
+                    })
+                    .finally(() => {
+                        console.log('Questo console.log viene eseguito sempre alla fine della chiamata API');
+                    });
                 
             }
             else{

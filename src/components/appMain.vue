@@ -67,9 +67,12 @@ export default {
 
 <template>
     <main>
+        <input v-model="store.searchText" type="text">
+        <button @click="$emit('searchFilm')" >search</button>
         <div>
-            <input v-model="store.searchText" type="text">
-            <button @click="$emit('searchFilm')" >search</button>
+            <h2>Film</h2>
+            
+            
             <ul v-for="(film, i) in store.films">
                 <li >
                     {{ film.title }}
@@ -88,7 +91,32 @@ export default {
                     {{ film.vote_average }}
                 </li>
 
-                <hr>
+               <hr>
+
+
+            </ul>
+        </div>
+        <div>
+            <h2>Serie</h2>
+            <ul v-for="(serie, i) in store.series">
+                <li >
+                    {{ serie.name }}
+                </li>
+                <li >
+                    {{ serie.original_name }}
+                </li>
+                <li >
+                    {{ serie.original_language }}
+                    
+                </li>
+                <li >
+                    <img  :src="lenguage(serie.original_language)">
+                </li>
+                <li >
+                    {{ serie.vote_average }}
+                </li>
+
+               <hr>
 
 
             </ul>

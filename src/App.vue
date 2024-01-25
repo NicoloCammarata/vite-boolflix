@@ -59,10 +59,7 @@ export default {
         
 
     },
-    mounted(){
-        this.foundFilm()
-        
-    }
+    
   
 }
 </script>
@@ -72,7 +69,7 @@ export default {
   <appHeader />
 
   <appMain 
-  :@searchFilm="foundFilm()"/>
+  @searchFilm="foundFilm()"/>
 
   <appFooter />
   

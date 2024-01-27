@@ -73,38 +73,43 @@ export default {
 
 <template>
 
-  <div>
-    <li>
+<div class="poster">
+    <div class="copertina">
         <img :src="'https://image.tmdb.org/t/p/w342' + poster" alt="film.title">
+        
                     
-    </li>
-    <li >
-        {{ title }}
-    </li>                
+    </div>
+    <div class="info">
+        <li >
+            {{ title }}
+        </li>                
                     
-    <li >
-        {{ ogTitle }}
-    </li>
-    <li >
-        {{ lingua }}
+        <li >
+            {{ ogTitle }}
+        </li>
+        <li >
+            {{ lingua }}
                     
-    </li>
-    <li class="flag">
-        <img  :src="lenguage(lingua)">
-    </li>                
-    <li >
-        {{ vote }}
-        <i :class="{ 'buono': vote > 1.500 }" class="fa-regular fa-star" ></i>
-        <i :class="{ 'buono': vote > 3.500 }" class="fa-regular fa-star"></i>
-        <i :class="{ 'buono': vote > 5.500 }" class="fa-regular fa-star"></i>
-        <i :class="{ 'buono': vote > 7.500 }" class="fa-regular fa-star"></i>
-        <i :class="{ 'buono': vote > 9.500 }" class="fa-regular fa-star"></i>
-    </li>      
+        </li>
+        <li class="flag">
+            <img  :src="lenguage(lingua)">
+        </li>                
+        <li >
+            {{ vote }}
+            <i :class="{ 'buono': vote > 1.500 }" class="fa-regular fa-star" ></i>
+            <i :class="{ 'buono': vote > 3.500 }" class="fa-regular fa-star"></i>
+            <i :class="{ 'buono': vote > 5.500 }" class="fa-regular fa-star"></i>
+            <i :class="{ 'buono': vote > 7.500 }" class="fa-regular fa-star"></i>
+            <i :class="{ 'buono': vote > 9.500 }" class="fa-regular fa-star"></i>
+        </li>
+
+    </div>
+          
     
                          
 
-  </div>
-  <hr>      
+</div>
+
 
   
 </template>
@@ -120,5 +125,25 @@ export default {
     background-color: yellow;
 }
 
+li{
+    list-style: none;
+}
+
+.info{
+    display: none;
+
+
+}
+
+.poster:hover {
+    .info{
+        display: block;
+
+
+    }
+    
+    
+    
+}
 
 </style>

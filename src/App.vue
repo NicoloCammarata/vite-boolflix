@@ -8,6 +8,7 @@ import { store } from './sotre.js'
 import "@fortawesome/fontawesome-free/css/all.css";
 
 
+
 export default {
     data() {
         return {
@@ -69,6 +70,7 @@ export default {
         appMain,
         appFooter,
         axios,
+
         
 
     },
